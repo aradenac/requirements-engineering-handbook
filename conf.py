@@ -1,6 +1,6 @@
-project = "Requirements"
-author = "Your Team"
-copyright = "2026, Your Team"
+project = "Engineering Requirements Handbook"
+author = "Abel RADENAC"
+copyright = "2026, Abel RADENAC"
 
 extensions = [
     "myst_parser",
@@ -28,20 +28,6 @@ needs_types = [
         "title": "Requirement",
         "prefix": "REQ_",
         "color": "#BFD8D2",
-        "style": "node",
-    },
-    {
-        "directive": "spec",
-        "title": "Specification",
-        "prefix": "SPEC_",
-        "color": "#FEDCD2",
-        "style": "node",
-    },
-    {
-        "directive": "test",
-        "title": "Test",
-        "prefix": "TEST_",
-        "color": "#DF744A",
         "style": "node",
     },
 ]
