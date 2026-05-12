@@ -146,6 +146,52 @@ Use it for requirements that concern products, systems, processes, hardware, doc
     Test.
     ```
 
+## Verification methods
+
+These methods show how satisfaction can be proven. They are not a workflow.
+
+| Method | Use when |
+| --- | --- |
+| Inspection | The requirement can be checked by looking at the item, document, or attribute directly. |
+| Analysis | The requirement can be proven by calculation, model, or reasoned evaluation. |
+| Demonstration | The requirement can be shown in operation without a formal test setup. |
+| Test | The requirement needs controlled execution with recorded results. |
+| Review | The requirement depends on a structured human check of content or consistency. |
+| Audit | The requirement concerns compliance against rules, records, or evidence. |
+
+## Sentence patterns
+
+Use these compact patterns to make the obligation, trigger, or scope explicit. Use `<subject>` instead of assuming a system.
+
+| Pattern | When to use | Bad example | Better example | Why |
+| --- | --- | --- | --- | --- |
+| Universal: `The <subject> shall <verifiable action> <object>.` | Use when the obligation always applies. | The equipment should be sturdy. | The equipment shall withstand a 200 N load. | The obligation is direct and measurable. |
+| Event-driven: `When <trigger>, the <subject> shall <verifiable action> <object>.` | Use when an event starts the obligation. | When something happens, the service should react. | When the container is opened, the alarm shall sound. | The trigger is explicit. |
+| State-driven: `While <state>, the <subject> shall <verifiable action> <object>.` | Use when the obligation lasts while a condition remains true. | While open, it should remain safe. | While the access panel is open, the guard shall remain engaged. | The active state is clear. |
+| Exception / fault: `If <undesired condition>, then the <subject> shall <required response>.` | Use for abnormal conditions or limit violations. | If there is a problem, the process should stop. | If pressure exceeds the limit, then the process shall stop within 2 s. | The fault response is unambiguous. |
+| Variant / optional scope: `Where <feature or context applies>, the <subject> shall <verifiable action> <object>.` | Use when the rule applies only in a defined variant or context. | Where appropriate, the report should include details. | Where the extended report format applies, the report shall include a summary section. | The scope is defined instead of implied. |
+
+## Weak wording replacement
+
+Replace vague wording with observable, measurable, bounded, or referenced wording.
+
+| Weak wording | Problem | Better strategy | Example correction |
+| --- | --- | --- | --- |
+| fast | No measurable threshold. | State a response time or delay limit. | The service shall respond within 2 s. |
+| robust | Undefined resilience target. | Define loads, cycles, faults, or environmental bounds. | The bracket shall withstand 1,000 cycles at 200 N. |
+| simple | Subjective and audience-dependent. | State steps, parts, or complexity limits. | The procedure shall require no more than 3 steps. |
+| user-friendly | Subjective usability claim. | State task time, error rate, or training limit. | A trained user shall complete the form in under 3 min. |
+| optimal | No objective criterion. | State the optimization goal and constraints. | The layout shall minimize storage volume within the envelope. |
+| sufficient | Undefined adequacy. | State the minimum threshold or coverage. | The tank shall hold at least 20 L. |
+| as needed | Open-ended frequency or extent. | State the trigger or quantity. | The alarm shall activate when pressure exceeds 5 bar. |
+| where appropriate | Ambiguous applicability. | Define the condition for application. | Where the unit is installed outdoors, the casing shall be IP65-rated. |
+| etc. | Unbounded list. | Enumerate the full list or define the extension rule. | The report shall include title, date, author, and revision. |
+| manage | Vague action verb. | State the exact action or outcome. | The controller shall store the value in memory. |
+| support | Broad and unclear. | State the supported function or interface. | The cart shall support a load of 150 kg. |
+| handle | Undefined behavior. | State the response for each condition. | The system shall reject inputs outside the defined range. |
+| improve | Relative and unmeasured. | State the target value or baseline comparison. | The process shall reduce scrap by 10 percent. |
+| compatible | Missing reference. | Cite the standard, profile, version, or test suite. | The connector shall conform to the referenced profile version 3. |
+
 ## Template
 
 Use this template to draft a requirement.
@@ -165,7 +211,7 @@ Source:
 Verification:
 [Inspection | Analysis | Demonstration | Test | Review | Audit]
 
-Fit / Constraints:
+Applicability / Constraints:
 [Relevant assumptions, dependencies, bounds, interfaces, or excluded cases.]
 
 Trace links:
@@ -186,7 +232,6 @@ Trace links:
 10. It is verifiable.
 11. It identifies a verification method.
 12. It does not conflict with other approved requirements.
-13. It is traceable to related needs, constraints, or artifacts.
-14. It uses `shall`, `should`, and `may` consistently.
+13. Its source, rationale, and verification intent can be identified.
+14. A mandatory requirement statement uses exactly one `shall`.
 15. It can be reviewed by someone who was not involved in writing it.
-
